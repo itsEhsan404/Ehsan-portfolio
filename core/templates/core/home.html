@@ -14,5 +14,18 @@
     {%else%}
         <p>You are under 18</p>
     {%endif%}
+
+    <h2>My courses</h2>
+
+    <u1>
+        {% for course in courses %}
+            <li>
+                {{forloop.counter}}.{{ course }}
+                {%if not forloop.last %} |
+                {% endif %}
+            </li>
+        {% endfor %}
+    </u1>
+
 </body>
 </html>
