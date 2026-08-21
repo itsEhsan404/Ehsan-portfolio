@@ -20,8 +20,11 @@
     <u1>
         {% for course in courses %}
             <li>
-                {{forloop.counter}}.{{ course }}
-                {%if not forloop.last %} |
+                {{forloop.counter}}.{{ course.name }}
+                -{{course.duration}}
+                -{{course.level}}
+                {% if course.level == 'Beginner' %}
+                    <strong> -Beginner Freindly </strong>
                 {% endif %}
             </li>
         {% endfor %}
