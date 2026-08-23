@@ -1,13 +1,294 @@
 {% extends 'core/base.html' %}
 
+{% load static %}
+
+
 {% block title %}
-About
+About | Ehsan Ghasemi
 {% endblock %}
+
 
 {% block content %}
 
-<h1> About Us  </h1>
+<section class="about-page">
 
-<p> This is about page </p>
+    <!-- About Hero -->
+
+    <div class="about-hero">
+
+        <div class="about-text">
+
+            <p class="hero-intro">
+                About Me
+            </p>
+
+            <h1>
+                Building my path into Backend Development.
+            </h1>
+
+            <p>
+                I'm Ehsan Ghasemi, a Computer Engineering student
+                at Hakim Sabzevari University. I'm currently focused
+                on Python and Django and working toward becoming
+                a professional Backend Developer.
+            </p>
+
+            <p>
+                I enjoy understanding how software works behind
+                the scenes and turning problems into clean,
+                maintainable solutions.
+            </p>
+
+        </div>
+
+
+        <div class="about-image">
+
+            <img
+                src="{% static 'core/images/developer-workspace.jpg' %}"
+                alt="Developer workspace with code on a laptop"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- Education -->
+
+    <section class="about-section">
+
+        <div class="about-section-title">
+
+            <span>
+                01
+            </span>
+
+            <h2>
+                Education
+            </h2>
+
+        </div>
+
+        <div class="about-card">
+
+            <h3>
+                B.Sc. in Computer Engineering
+            </h3>
+
+            <p class="card-highlight">
+                Hakim Sabzevari University
+            </p>
+
+            <p>
+                Studying Computer Engineering with a focus on
+                programming, software development and building
+                a strong foundation in computer science.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Technical Journey -->
+
+    <section class="about-section">
+
+        <div class="about-section-title">
+
+            <span>
+                02
+            </span>
+
+            <h2>
+                My Technical Journey
+            </h2>
+
+        </div>
+
+        <div class="journey-grid">
+
+            <div class="journey-card">
+
+                <div class="journey-number">
+                    01
+                </div>
+
+                <h3>
+                    Programming Fundamentals
+                </h3>
+
+                <p>
+                    Learning programming concepts, algorithms,
+                    problem solving and object-oriented programming.
+                </p>
+
+            </div>
+
+
+            <div class="journey-card">
+
+                <div class="journey-number">
+                    02
+                </div>
+
+                <h3>
+                    Python
+                </h3>
+
+                <p>
+                    Developing my Python skills and using
+                    object-oriented programming to build
+                    practical applications.
+                </p>
+
+            </div>
+
+
+            <div class="journey-card">
+
+                <div class="journey-number">
+                    03
+                </div>
+
+                <h3>
+                    Django & Backend
+                </h3>
+
+                <p>
+                    Currently learning Django and backend
+                    web development by building real projects.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+
+    <section class="about-section">
+
+        <div class="about-section-title">
+
+            <span>
+                03
+            </span>
+
+            <h2>
+                Technical Skills
+            </h2>
+
+        </div>
+
+
+        <div class="skills-groups">
+
+
+            <div class="skill-group">
+
+                <h3>
+                    Languages
+                </h3>
+
+                <div class="skill-list">
+
+                    <span>C++</span>
+                    <span>Python</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-group">
+
+                <h3>
+                    Web Development
+                </h3>
+
+                <div class="skill-list">
+
+                    <span>Django</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-group">
+
+                <h3>
+                    Tools
+                </h3>
+
+                <div class="skill-list">
+
+                    <span>Git</span>
+                    <span>GitHub</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="skill-group">
+
+                <h3>
+                    Programming Concepts
+                </h3>
+
+                <div class="skill-list">
+
+                    <span>OOP</span>
+                    <span>Algorithms</span>
+                    <span>Problem Solving</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Career Goal -->
+
+    <section class="career-section">
+
+        <div>
+
+            <p class="hero-intro">
+                Career Goal
+            </p>
+
+            <h2>
+                Backend Developer → SEO & Web Growth
+            </h2>
+
+            <p>
+                My current goal is to become a strong Backend Developer
+                with Python and Django. In the long term, I also want
+                to expand my knowledge of SEO and combine technical
+                development with website growth and optimization.
+            </p>
+
+        </div>
+
+        <a href="/"
+           class="btn btn-primary">
+            View My Projects
+        </a>
+
+    </section>
+
+
+</section>
 
 {% endblock %}

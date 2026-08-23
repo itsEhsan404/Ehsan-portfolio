@@ -1,37 +1,253 @@
 {% extends 'core/base.html' %}
 
+{% load static %}
+
+
 {% block title %}
-Home
+Home | Ehsan Ghasemi
 {% endblock %}
+
 
 {% block content %}
 
-<h1>Hello {{ name }}!</h1>
+<!-- =========================
+     Hero
+========================= -->
 
-<p>Age: {{ age }}!</p>
+<section class="home-hero">
 
-<p>Course: {{ course }}!</p>
+    <div class="home-hero-content">
 
-{% if age >= 18 %}
-    <p>You are an adult</p>
-{% else %}
-    <p>You are under 18</p>
-{% endif %}
+        <p class="hero-intro">
+            Hello, I'm
+        </p>
 
-<h2>My Courses</h2>
+        <h1>
+            Ehsan Ghasemi
+        </h1>
 
-<ul>
-    {% for course in courses %}
-        <li>
-            {{ forloop.counter }}. {{ course.name }}
-            - {{ course.duration }}
-            - {{ course.level }}
+        <h2>
+            Backend Developer
+        </h2>
 
-            {% if course.level == 'Beginner' %}
-                <strong> - Beginner Friendly</strong>
-            {% endif %}
-        </li>
-    {% endfor %}
-</ul>
+        <p class="home-description">
+            I'm a Computer Engineering student focused on
+            Python, Django and backend web development.
+            I enjoy building clean and practical solutions
+            to real-world problems.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a href="/projects/" class="btn btn-primary">
+                View Projects
+            </a>
+
+            <a href="/about/" class="btn btn-secondary">
+                About Me
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="home-hero-image">
+
+        <div class="image-glow"></div>
+
+        <img
+            src="{% static 'core/images/developer-hero.jpg' %}"
+            alt="Backend developer workspace"
+        >
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     Quick Skills
+========================= -->
+
+<section class="home-skills">
+
+    <div class="section-heading">
+
+        <p class="hero-intro">
+            What I Work With
+        </p>
+
+        <h2>
+            Technical Skills
+        </h2>
+
+    </div>
+
+
+    <div class="quick-skills">
+
+        <div class="quick-skill">
+            <span class="skill-icon">Py</span>
+            <h3>Python</h3>
+            <p>Programming & Backend</p>
+        </div>
+
+
+        <div class="quick-skill">
+            <span class="skill-icon">Dj</span>
+            <h3>Django</h3>
+            <p>Web Development</p>
+        </div>
+
+
+        <div class="quick-skill">
+            <span class="skill-icon">GH</span>
+            <h3>Git & GitHub</h3>
+            <p>Version Control</p>
+        </div>
+
+
+        <div class="quick-skill">
+            <span class="skill-icon">&lt;/&gt;</span>
+            <h3>HTML & CSS</h3>
+            <p>Frontend Basics</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     Featured Projects
+========================= -->
+
+<section class="home-projects">
+
+    <div class="section-heading">
+
+        <p class="hero-intro">
+            My Work
+        </p>
+
+        <h2>
+            Featured Projects
+        </h2>
+
+    </div>
+
+
+    <div class="featured-projects">
+
+
+        <article class="featured-project">
+
+            <div class="project-image">
+
+                <div class="project-placeholder">
+                    Python
+                </div>
+
+            </div>
+
+            <div class="project-content">
+
+                <span class="project-label">
+                    Python Project
+                </span>
+
+                <h3>
+                    Calculator Application
+                </h3>
+
+                <p>
+                    A desktop calculator application built
+                    with Python and Tkinter.
+                </p>
+
+                <div class="project-tech">
+
+                    <span>Python</span>
+                    <span>Tkinter</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <article class="featured-project">
+
+            <div class="project-image">
+
+                <div class="project-placeholder">
+                    Django
+                </div>
+
+            </div>
+
+            <div class="project-content">
+
+                <span class="project-label">
+                    Django Project
+                </span>
+
+                <h3>
+                    Personal Portfolio
+                </h3>
+
+                <p>
+                    A dynamic portfolio website built with
+                    Django, HTML and CSS.
+                </p>
+
+                <div class="project-tech">
+
+                    <span>Python</span>
+                    <span>Django</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="home-cta">
+
+    <p class="hero-intro">
+        Let's Build Something
+    </p>
+
+    <h2>
+        Interested in working together?
+    </h2>
+
+    <p>
+        I'm currently building my backend development
+        skills and working toward becoming a professional
+        Backend Developer.
+    </p>
+
+    <a href="#" class="btn btn-primary">
+        Get In Touch
+    </a>
+
+</section>
+
 
 {% endblock %}

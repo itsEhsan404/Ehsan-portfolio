@@ -1,13 +1,56 @@
+{% load static %}
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}First Django Project{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+
+    <title>
+        {% block title %}Ehsan Ghasemi | Portfolio{% endblock %}
+    </title>
+
+
 </head>
+
 <body>
 
-    {% block content %}
-    {% endblock %}
+    <nav>
+        <div class="container nav-content">
+
+            <div class="logo">
+                Ehsan Ghasemi
+            </div>
+
+            <ul class="nav-links">
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'projects' %}">Projects</a>
+                <a href="#">Contact</a>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <main>
+        <div class="container">
+
+            {% block content %}
+            {% endblock %}
+
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Ehsan Ghasemi. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
