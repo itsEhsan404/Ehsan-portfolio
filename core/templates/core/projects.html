@@ -84,7 +84,7 @@ Projects | Ehsan Ghasemi
                 <div class="project-tech">
 
                     <span>
-                        {{ project.technologies }}
+                        {% firstof project.technologies project.technology %}
                     </span>
 
                 </div>
