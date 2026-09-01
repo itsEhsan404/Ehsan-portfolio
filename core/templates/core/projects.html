@@ -7,6 +7,10 @@
 Projects | Ehsan Ghasemi
 {% endblock %}
 
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'core/css/projects.css' %}">
+{% endblock %}
+
 
 {% block content %}
 
@@ -40,6 +44,7 @@ Projects | Ehsan Ghasemi
 
         <article class="project-card">
 
+
             <!-- Project Image -->
 
             <div class="project-card-image">
@@ -66,29 +71,40 @@ Projects | Ehsan Ghasemi
 
             <div class="project-card-content">
 
+                <!-- Category -->
+
                 <span class="project-category">
                     {{ project.category }}
                 </span>
 
+
+                <!-- Title -->
 
                 <h2>
                     {{ project.title }}
                 </h2>
 
 
+                <!-- Description -->
+
                 <p>
                     {{ project.description }}
                 </p>
 
 
-                <div class="project-tech">
+                <!-- Technologies -->
 
-                    <span>
-                        {{ project.technologies }}
-                    </span>
+                <div class="project-tech">
+                    {% for technology in project.technology_list %}
+                        <span>
+                            {{ technology }}
+                        </span>
+                    {% endfor %}
 
                 </div>
 
+
+                <!-- GitHub Link -->
 
                 {% if project.github_url %}
 
@@ -98,6 +114,7 @@ Projects | Ehsan Ghasemi
                             href="{{ project.github_url }}"
                             class="project-link"
                             target="_blank"
+                            rel="noopener noreferrer"
                         >
                             GitHub
                         </a>

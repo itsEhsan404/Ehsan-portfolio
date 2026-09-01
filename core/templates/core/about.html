@@ -7,6 +7,10 @@
 About | Ehsan Ghasemi
 {% endblock %}
 
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'core/css/about.css' %}">
+{% endblock %}
+
 
 {% block content %}
 
@@ -45,8 +49,8 @@ About | Ehsan Ghasemi
         <div class="about-image">
 
             <img
-                src="{% static 'core/images/developer-workspace.jpg' %}"
-                alt="Developer workspace with code on a laptop"
+                src="{% static 'core/images/Ehsan.jpg' %}"
+                alt="my picture"
             >
 
         </div>
@@ -281,7 +285,7 @@ About | Ehsan Ghasemi
 
         </div>
 
-        <a href="/"
+        <a href="/projects/"
            class="btn btn-primary">
             View My Projects
         </a>

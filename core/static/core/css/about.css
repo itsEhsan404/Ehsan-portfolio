@@ -1,0 +1,48 @@
+/* About page */
+
+.about-page { padding: 80px 0; }
+.about-hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; margin-bottom: 100px; }
+.about-text h1 { font-size: 48px; line-height: 1.2; margin: 15px 0 25px; }
+.about-text p:not(.hero-intro) { color: #cbd5e1; max-width: 650px; margin-bottom: 18px; }
+.about-image { position: relative; }
+.about-image img { width: 100%; display: block; border-radius: 14px; border: 1px solid #1e293b; }
+.about-section { margin-bottom: 100px; }
+.about-section-title { display: flex; align-items: center; gap: 15px; margin-bottom: 30px; }
+.about-section-title span { color: #38bdf8; font-weight: bold; }
+.about-section-title h2 { font-size: 32px; }
+.about-card { background: #1e293b; padding: 30px; border-radius: 12px; border: 1px solid #334155; }
+.about-card, .journey-card, .skill-group { background: var(--card-bg); border-color: var(--border-color); backdrop-filter: blur(10px); transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; }
+.about-card:hover, .skill-group:hover { transform: translateY(-5px); border-color: var(--neon-blue); box-shadow: 0 0 20px rgba(0, 229, 255, 0.15); }
+.about-card h3 { font-size: 24px; margin-bottom: 8px; }
+.card-highlight { color: #38bdf8; margin-bottom: 15px; }
+.about-card p:last-child { color: #94a3b8; }
+.journey-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.journey-card, .skill-group { background: var(--card-bg); padding: 28px; border-radius: 12px; border: 1px solid var(--border-color); backdrop-filter: blur(10px); transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; }
+.journey-card:hover, .skill-group:hover { transform: translateY(-5px); border-color: var(--neon-blue); box-shadow: 0 0 20px rgba(0, 229, 255, 0.15); }
+.journey-number { color: #38bdf8; font-size: 14px; font-weight: bold; margin-bottom: 20px; }
+.journey-card h3 { font-size: 20px; margin-bottom: 15px; }
+.journey-card p { color: #94a3b8; }
+.skills-groups { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.skill-group h3 { margin-bottom: 18px; font-size: 20px; }
+.skill-list { display: flex; flex-wrap: wrap; gap: 10px; }
+.skill-list span { background: rgba(0, 229, 255, 0.08); color: var(--neon-blue); padding: 8px 14px; border: 1px solid rgba(0, 229, 255, 0.25); border-radius: 6px; font-size: 14px; transition: 0.3s; }
+.skill-list span:hover { background: rgba(0, 229, 255, 0.15); border-color: var(--neon-blue); box-shadow: 0 0 10px rgba(0, 229, 255, 0.2); transform: translateY(-2px); }
+.career-section { display: flex; justify-content: space-between; align-items: center; gap: 40px; background: #1e293b; border: 1px solid #334155; padding: 45px; border-radius: 14px; margin-bottom: 40px; }
+.career-section h2 { font-size: 30px; margin: 10px 0 15px; }
+.career-section p:not(.hero-intro) { max-width: 700px; color: #94a3b8; }
+
+@media (max-width: 800px) {
+    .about-hero { grid-template-columns: 1fr; gap: 40px; }
+    .about-text h1 { font-size: 38px; }
+    .journey-grid, .skills-groups { grid-template-columns: 1fr; }
+    .career-section { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 700px) {
+    .about-page { padding: 50px 0; }
+    .about-hero { gap: 40px; margin-bottom: 70px; }
+    .about-section { margin-bottom: 70px; }
+    .about-section-title h2 { font-size: 26px; }
+    .career-section { padding: 30px; }
+    .career-section h2 { font-size: 25px; }
+}

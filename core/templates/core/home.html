@@ -7,6 +7,10 @@
 Home | Ehsan Ghasemi
 {% endblock %}
 
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'core/css/home.css' %}">
+{% endblock %}
+
 
 {% block content %}
 
@@ -243,7 +247,7 @@ Home | Ehsan Ghasemi
         Backend Developer.
     </p>
 
-    <a href="#" class="btn btn-primary">
+    <a href="contact" class="btn btn-primary">
         Get In Touch
     </a>
 
