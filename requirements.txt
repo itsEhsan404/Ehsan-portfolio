@@ -1,5 +1,6 @@
 asgiref==3.12.1
-Django==3.2.25
+Django>=5.1,<6
+Pillow>=10.0
 pytz==2026.3.post1
 sqlparse==0.5.5
 typing_extensions==4.16.0
