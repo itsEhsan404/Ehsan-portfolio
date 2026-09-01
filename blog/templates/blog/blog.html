@@ -1,0 +1,131 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+
+{% block title %}
+Blog | Ehsan Ghasemi
+{% endblock %}
+
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'blog/css/blog.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="blog-page">
+
+    <!-- Blog Header -->
+
+    <div class="blog-header">
+
+        <p class="hero-intro">
+            My Blog
+        </p>
+
+        <h1>
+            Articles & Insights
+        </h1>
+
+        <p>
+            Thoughts, tutorials and experiences about
+            Python, Django, backend development and programming.
+        </p>
+
+    </div>
+
+
+    <!-- Blog Posts -->
+
+    <div class="blog-grid">
+
+        {% for post in posts %}
+
+        <article class="blog-card">
+
+            <!-- Image -->
+
+            <div class="blog-card-image">
+
+                {% if post.image %}
+
+                    <img
+                        src="{{ post.image.url }}"
+                        alt="{{ post.title }}"
+                    >
+
+                {% else %}
+
+                    <div class="blog-image-text">
+                        {{ post.category }}
+                    </div>
+
+                {% endif %}
+
+            </div>
+
+
+            <!-- Content -->
+
+            <div class="blog-card-content">
+
+                <span class="blog-category">
+                    {{ post.category }}
+                </span>
+
+                <h2>
+                    {{ post.title }}
+                </h2>
+
+                <p>
+                    {{ post.content|truncatewords:30 }}
+                </p>
+
+                <div class="blog-card-footer">
+
+                    <span class="blog-date">
+                        {{ post.created_at|date:"M d, Y" }}
+                    </span>
+
+                    <a
+                        href="{% url 'post_detail' post.id %}"
+                        class="blog-read-more"
+                    >
+                        Read More →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        {% empty %}
+
+        <div class="blog-empty">
+
+            <p class="hero-intro">
+                No Articles Yet
+            </p>
+
+            <h2>
+                Coming Soon
+            </h2>
+
+            <p>
+                I'm currently working on new articles
+                about Python, Django and backend development.
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}
