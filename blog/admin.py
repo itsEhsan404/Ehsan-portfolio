@@ -1,17 +1,17 @@
 from django.contrib import admin
-
 from .models import post
 
 
 @admin.register(post)
 class PostAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('title',)}
     list_display = (
-        'title', 'category', 'created_at'
+        'title', 'slug', 'created_date', 'updated_date'
     )
     
     
     list_filter = (
-        'category', 'created_at'
+        'category', 'created_date', 'updated_date'
     )
     
     
@@ -21,5 +21,5 @@ class PostAdmin(admin.ModelAdmin):
     
     
     ordering = (
-        '-created_at',
+        '-created_date',
     )

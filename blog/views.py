@@ -1,10 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 from .models import post
 
 
 def blog(request):
-    posts = post.objects.all().order_by('-created_at')
+    posts = post.objects.all().order_by('-created_date')
 
     context = {
         'posts': posts,
@@ -13,8 +13,12 @@ def blog(request):
     return render(request, 'blog/blog.html', context)
 
 
-def post_detail(request, post_id):
-    Post = get_object_or_404(post, id=post_id)
+def post_detail(request, slug):
+    if slug.isdigit():
+        Post = get_object_or_404(post, pk=slug)
+        return redirect('post_detail', slug=Post.slug, permanent=True)
+    else:
+        Post = get_object_or_404(post, slug=slug)
 
     context = {
         'post': Post,

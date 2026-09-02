@@ -86,11 +86,11 @@ Blog | Ehsan Ghasemi
                 <div class="blog-card-footer">
 
                     <span class="blog-date">
-                        {{ post.created_at|date:"M d, Y" }}
+                        {{ post.created_date|date:"M d, Y" }}
                     </span>
 
                     <a
-                        href="{% url 'post_detail' post.id %}"
+                        href="{% url 'post_detail' post.slug %}"
                         class="blog-read-more"
                     >
                         Read More →
